@@ -174,6 +174,7 @@ const koders = JSON.parse( dbkoders );
 // tenemos todos los koders ya como objetos
 if( process.argv[2] === 'ls' && process.argv.length === 3){
   console.log(koders)
+  process.exit(0);
 }
 
 // para agregar un nuevo koder
@@ -197,14 +198,18 @@ if( process.argv[2] === 'add'){
 
   let nuevoKoderStr = JSON.stringify( koders );
   fs.writeFileSync('db_koders.json', nuevoKoderStr);
-
+  console.log(`El koder ${nuevoKoder.firstName} ha sido agregado`);
+  process.exit(0);
 }
 
 // para borrar todos
 if( process.argv[2] === 'reset'){
   let borrados = JSON.stringify( [] );
   fs.writeFileSync('db_koders.json', borrados, 'utf-8');
+  console.log('Se han Borrado todos los koders')
+  process.exit(0)
 }
+
 
 // para borrar uno solo
 if( process.argv[2] === 'rm' && process.argv[3]){
@@ -214,4 +219,6 @@ if( process.argv[2] === 'rm' && process.argv[3]){
   })
   let nuevosKodersStr = JSON.stringify( nuevosKoders);
   fs.writeFileSync('db_koders.json', nuevosKodersStr);
+  console.log(`Se ha borrado el koder ${nombre}`);
+  process.exit(0)
 }
