@@ -158,13 +158,5 @@
         "age": 50,
         "email": "ijewessj@ca.gov",
         "generation": 9
-    },
-    {
-        "id": 21,
-        "firstName": "jesus",
-        "lastName": "hernandez",
-        "age": "33",
-        "email": "correo@coreo@gmail.com",
-        "generation": "27"
     }
 ]
